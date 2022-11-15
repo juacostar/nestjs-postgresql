@@ -24,15 +24,8 @@ export class PreferencesService {
     ){}
 
     findByName(name: string){
-        let preference = new Preference
-
-        //return this.PostgresDataSource.manager.createQueryBuilder()
-        //.select('preference')
-        //.from(Preference, 'preference')
-        //.where('preference.name = :name', {name: name}).getOne();
         return this.preferencesRepository.createQueryBuilder('preference')
         .where('preference.name = :name', {name: name}).getOne();
-        //return this.preferencesRepository.find();
     }
 
 
